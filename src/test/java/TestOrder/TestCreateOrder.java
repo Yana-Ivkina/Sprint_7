@@ -1,6 +1,8 @@
 package TestOrder;
 
 import Order.Order;
+import Url.CurrentUrl;
+import Url.TypeUrl;
 import com.google.gson.Gson;
 import io.restassured.RestAssured;
 import io.restassured.response.Response;
@@ -32,7 +34,7 @@ public class TestCreateOrder {
 
     @Before
     public void setUp() {
-        RestAssured.baseURI = "http://qa-scooter.praktikum-services.ru";
+        RestAssured.baseURI = CurrentUrl.baseUrl(TypeUrl.Test_Url);
     }
 
     @Test

@@ -1,6 +1,8 @@
 package TestOrder;
 
 import Order.OrderList;
+import Url.CurrentUrl;
+import Url.TypeUrl;
 import io.restassured.RestAssured;
 import org.junit.Before;
 import org.junit.Test;
@@ -11,7 +13,7 @@ public class TestOrderList {
 
     @Before
     public void setUp() {
-        RestAssured.baseURI = "http://qa-scooter.praktikum-services.ru";
+        RestAssured.baseURI = CurrentUrl.baseUrl(TypeUrl.Test_Url);
     }
 
     @Test

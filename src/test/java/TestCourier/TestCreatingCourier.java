@@ -2,6 +2,8 @@ package TestCourier;
 
 import Courier.CourierGenerator;
 import Courier.CreateCourier;
+import Url.CurrentUrl;
+import Url.TypeUrl;
 import io.restassured.RestAssured;
 import io.restassured.response.Response;
 import org.junit.Before;
@@ -15,7 +17,7 @@ import io.qameta.allure.Step;
 public class TestCreatingCourier {
     @Before
     public void setUp() {
-        RestAssured.baseURI = "http://qa-scooter.praktikum-services.ru";
+        RestAssured.baseURI = CurrentUrl.baseUrl(TypeUrl.Test_Url);
     }
 
     @Test
