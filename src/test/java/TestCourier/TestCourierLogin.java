@@ -1,6 +1,7 @@
 package TestCourier;
 
 import Courier.BaseCourier;
+import Courier.CourierGenerator;
 import io.restassured.RestAssured;
 import io.restassured.response.Response;
 import org.junit.Before;
@@ -71,7 +72,7 @@ public class TestCourierLogin {
 
     @Test
     public void errorWhenEnteringIncorrectData() {
-        BaseCourier courier = new BaseCourier("hugooFIRST", "1235");
+        BaseCourier courier = new BaseCourier(CourierGenerator.courierRandom().getLogin(), CourierGenerator.courierRandom().getPassword());
         Response response = given()
                 .header("Content-type", "application/json")
                 .and()
